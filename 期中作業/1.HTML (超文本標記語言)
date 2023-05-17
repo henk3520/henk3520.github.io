@@ -1,0 +1,131 @@
+HTML (超文本標記語言)
+  (1)HTML簡介:HTML（超文本標記語言）是一種用於創建網頁的標記語言。它使用標籤（tag）來描述網頁的結構和內容。HTML 標籤是由尖括號（< 和 >）包圍的元素名稱，如 <tagname>。
+  HTML 被用於定義網頁的結構和內容，包括標題、段落、列表、表格、圖像、超連結等。通過使用不同的標籤和屬性，可以將內容組織成適當的格式，並添加各種元素和功能。
+  以下是一個簡單的 HTML 範例：
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>我的第一個網頁</title>
+  </head>
+  <body>
+    <h1>歡迎來到我的網頁</h1>
+    <p>這是一個段落。</p>
+    <img src="image.jpg" alt="圖片描述">
+    <a href="https://www.example.com">這是一個連結</a>
+  </body>
+  </html>
+
+  上面的範例展示了一個簡單的 HTML 文件結構。<!DOCTYPE html> 宣告了文件類型為 HTML5。<html> 元素是 HTML 文件的根元素，包含了整個網頁的內容。<head> 元素用於定義網頁的元資料，如標題、引入的外部樣式表和腳本。<body> 元素包含了網頁的可見內容，如標題、段落、圖像和連結。
+  HTML 使用不同的標籤來標記不同的元素，並使用屬性來提供進一步的信息。例如，<h1> 標籤用於標記一級標題，<p> 標籤用於標記段落，<img> 標籤用於插入圖像，<a> 標籤用於定義超連結。
+  HTML 是網頁開發的基礎，理解和掌握 HTML 語法和標籤對於創建結構良好、內容豐富的網頁至關重要。
+  
+  (2)HTML元素:HTML 元素是構成 HTML 文件的基本組成單位。它們由起始標籤（opening tag）、內容和結束標籤（closing tag）組成。有些元素也可以是空元素，它們只有起始標籤而沒有結束標籤。
+  
+  以下是一些常見的 HTML 元素及其示例：
+  1. 段落元素 (<p>):
+  <p>This is a paragraph.</p>
+  2. 標題元素 (<h1> 到 <h6>):
+  <h1>This is a heading</h1>
+  <h2>This is a subheading</h2>
+  3. 超連結元素 (<a>):
+  <a href="https://www.example.com">Visit Example</a>
+  4. 圖像元素 (<img>):
+  <img src="image.jpg" alt="Image Description">
+  5. 列表元素 (<ul>, <ol>, <li>):
+  <ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  </ul>
+  6. 表格元素 (<table>, <tr>, <td>):
+  <table>
+  <tr>
+    <td>Row 1, Cell 1</td>
+    <td>Row 1, Cell 2</td>
+  </tr>
+  <tr>
+    <td>Row 2, Cell 1</td>
+    <td>Row 2, Cell 2</td>
+  </tr>
+  </table>
+  7. 表單元素 (<form>, <input>, <button>):
+  <form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <button type="submit">Submit</button>
+  </form>
+  8. 分區元素 (<div>, <span>):
+  <div>This is a division.</div>
+  <span>This is a span.</span>
+  上述僅是一些常見的 HTML 元素示例，HTML 還有很多其他元素可以用於不同的用途。可以根據需要使用適當的元素來結構化和呈現網頁的內容。
+
+  (3)HTML 屬性:HTML 屬性是用於提供額外信息或配置元素的特性。它們位於 HTML 元素的開始標籤中，通常使用名稱-值對的形式表示。以下是一些常見的 HTML 屬性及其示例：
+  1. class 屬性：
+  <div class="container">
+  <!-- 內容 -->
+  </div>
+  2. id 屬性：
+  <h1 id="main-heading">This is a heading</h1>
+  3. style 屬性：
+  <p style="color: red; font-size: 18px;">This is a paragraph with red color and font size 18px.</p>
+  4. src 屬性（用於圖像、音頻、視頻等元素）：
+  <img src="image.jpg" alt="Image Description">
+  5. href 屬性（用於超連結）：
+  <a href="https://www.example.com">Visit Example</a>
+  6. alt 屬性（用於圖像的替代文本）：
+  <img src="image.jpg" alt="Image Description">
+  7. disabled 屬性（用於禁用表單元素）：
+  <input type="text" disabled>
+  8. target 屬性（用於指定連結打開的目標窗口）：
+  <a href="https://www.example.com" target="_blank">Visit Example</a>
+  這只是一些常見的 HTML 屬性示例，HTML 還有許多其他屬性可以根據需要使用。屬性的使用可以通過指定不同的值來控制元素的外觀、行為和功能。在網頁設計中，HTML 屬性與 CSS 樣式和 JavaScript 腳本一起使用，以實現更豐富的網頁效果和互動。
+  
+  (4)HTML 標籤:HTML 標籤是用於標記和定義 HTML 元素的構建塊。它們被用於指定元素的開始和結束位置，並可以搭配屬性來提供進一步的指示和配置。以下是一些常見的 HTML 標籤及其示例：
+  1. <html> 標籤：定義 HTML 文件的根元素。
+  <html>
+  <!-- 文件內容 -->
+  </html>
+  2. <head> 標籤：定義 HTML 文件的元資料，如標題、引入的樣式表和腳本等。
+  <head>
+  <!-- 元資料內容 -->
+  </head>
+  3. <title> 標籤：定義網頁的標題，顯示在瀏覽器的標題欄或標籤頁上。
+  <title>網頁標題</title>
+  4. <body> 標籤：定義 HTML 文件的主體內容，包含可見的網頁內容。
+  <body>
+  <!-- 可見內容 -->
+  </body>
+  5. <h1> 到 <h6> 標籤：定義標題的級別，從 <h1> 是最高級別的標題，到 <h6> 是最低級別的標題。
+  <h1>標題一</h1>
+  <h2>標題二</h2>
+  <!-- ... -->
+  <h6>標題六</h6>
+  6. <p> 標籤：定義段落。
+  <p>這是一個段落。</p>
+  7. <a> 標籤：定義超連結。
+  <a href="https://www.example.com">這是一個連結</a>
+  8. <img> 標籤：定義圖像。
+  <img src="image.jpg" alt="圖片描述">
+  9. <ul>、<ol> 和 <li> 標籤：定義無序列表（無序項目符號）、有序列表（有序編號）和列表項目。
+  <ul>
+  <li>項目一</li>
+  <li>項目二</li>
+  </ul>
+
+  <ol>
+    <li>項目一</li>
+    <li>項目二</li>
+  </ol>
+  10. <table>、<tr> 和 <td> 標籤：定義表格、表格行和表格單元格。
+  <table>
+  <tr>
+    <td>單元格一</td>
+    <td>單元格二</td>
+  </tr>
+  <tr>
+    <td>單元格三</td>
+    <td>單元格四</td>
+  </tr>
+  </table>
+  這只是一些常見的 HTML 標籤示例，HTML 還有許多其他標籤可用於不同的目的。通過適當使用標籤和屬性，可以將網頁的內容和結構組織得更好，使其達到更好的可讀性和可維護性。
+
+

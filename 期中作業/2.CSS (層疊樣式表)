@@ -1,0 +1,202 @@
+CSS (層疊樣式表)
+  (1)CSS簡介:CSS（Cascading Style Sheets）是一種用於描述網頁外觀和佈局的樣式表語言。它與 HTML 搭配使用，用於控制網頁元素的外觀、大小、位置和行為等方面。
+  CSS 的基本工作原理是選擇元素，然後對其應用樣式。這可以通過選擇器（Selector）和屬性（Property）完成。選擇器用於選中要應用樣式的元素，屬性則用於指定該元素的樣式。屬性具有相應的值，用於描述要應用的樣式特徵。
+  以下是一個簡單的 CSS 代碼示例：
+  h1 {
+  color: blue;
+  font-size: 24px;
+  text-align: center;
+  }
+
+  p {
+    color: green;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  在上述示例中，h1 和 p 是選擇器，分別選中 HTML 中的標題和段落元素。然後，針對這些元素應用了不同的樣式。color 屬性用於設定文字顏色，font-size 屬性用於設定字體大小，text-align 屬性用於設定文本對齊方式，margin-bottom 屬性用於設定底部外邊距。
+  可以將 CSS 樣式應用於 HTML 中的元素，有多種方式：
+  1.內聯樣式（Inline Styles）：直接在 HTML 元素的 style 屬性中嵌入 CSS 代碼，例如：
+  <h1 style="color: blue  ; font-size: 24px; text-align: center;">標題</h1>
+  2.內部樣式表（Internal Stylesheet）：在 HTML 文件的 <head> 標籤內使用 <style> 標籤定義 CSS 代碼，例如：
+  <head>
+  <style>
+    h1 {
+      color: blue;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    p {
+      color: green;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  </style>
+  </head>
+  <body>
+    <h1>標題</h1>
+    <p>段落文本</p>
+  </body>
+  3.外部樣式表（External Stylesheet）：將 CSS 代碼存儲在一個單獨的 .css 文件中，然後在 HTML 文件中使用 <link> 標籤引入該 CSS 文件，例如：
+  <head>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>標題</h1>
+    <p>段落文本</p>
+  </body>
+  在使用 CSS 時，可以選擇元素、選擇元素的特定狀態（如懸停、聚焦等），應用不同的樣式，並使用層疊（Cascading）機制來處理不同層級的樣式規則。
+  CSS 提供了廣泛的屬性和值，用於控制元素的外觀、佈局和動畫等方面。通過使用 CSS，可以使網頁呈現出美觀、一致且具有吸引力的外觀，同時提高網頁的可讀性和易用性。
+  
+  (2)CSS選擇器:CSS 選擇器（Selectors）用於選中 HTML 元素，以便對其應用樣式。選擇器可以根據元素的標籤名稱、類名、ID、屬性等進行選擇。以下是一些常見的 CSS 選擇器：
+  1.元素選擇器（Element Selector）：根據 HTML 元素的標籤名稱進行選擇。
+  p {
+  color: blue;
+  }
+  上述示例中，p 選擇器選中了所有的 <p> 元素，並將它們的文字顏色設置為藍色。
+  2.類選擇器（Class Selector）：根據元素的類名進行選擇。類名以點（.）作為前綴。
+  .highlight {
+  background-color: yellow;
+  }
+  上述示例中，.highlight 選擇器選中具有 highlight 類名的元素，並將它們的背景顏色設置為黃色。
+  3.ID 選擇器（ID Selector）：根據元素的 ID 屬性進行選擇。ID 名稱以井號（#）作為前綴。
+  #logo {
+  width: 200px;
+  height: 100px;
+  }
+  上述示例中，#logo 選擇器選中具有 logo ID 的元素，並將它們的寬度設置為 200 像素，高度設置為 100 像素。
+  4.屬性選擇器（Attribute Selector）：根據元素的屬性進行選擇。
+  input[type="text"] {
+  border: 1px solid black;
+  }
+  上述示例中，input[type="text"] 選擇器選中所有 type 屬性值為 "text" 的 <input> 元素，並將它們的邊框設置為 1 像素的黑色實線。
+  此外，還有其他選擇器可以結合使用，以更精確地選擇元素，如後代選擇器（Descendant Selector）、子選擇器（Child Selector）、相鄰兄弟選擇器（Adjacent Sibling Selector）等。這些選擇器的組合使用可以構建更複雜的選擇條件。
+  例如：
+  *後代選擇器：選擇某元素的所有後代元素。
+  div p {
+  color: blue;
+  }
+  上述示例中，div p 選擇器選中所有在 <div> 元素內的 <p> 元素。
+  *子選擇器：選擇某元素的直接子元素。
+  ul > li {
+  list-style-type: circle;
+  }
+  上述示例中，ul > li 選擇器選中 <ul> 元素的直接子元素 <li> 元素。
+  *相鄰兄弟選擇器：選擇某元素的相鄰同級元素。
+  h2 + p {
+  font-weight: bold;
+  }
+  上述示例中，h2 + p 選擇器選中 <h2> 元素後的相鄰同級元素 <p> 元素。
+  這些是一些常見的 CSS 選擇器，它們可以單獨使用或組合使用，以達到精確選擇和應用樣式的目的。
+  
+  (3)CSS樣式規則:
+  CSS 樣式規則（Style Rules）用於定義元素的樣式。每個樣式規則由選擇器（Selectors）和一組樣式屬性（Style Properties）組成。以下是 CSS 樣式規則的基本結構：
+  選擇器 {
+  屬性1: 值1;
+  屬性2: 值2;
+  ...
+  屬性N: 值N;
+  }
+  *選擇器（Selectors）：用於選中要應用樣式的元素。可以是元素的標籤名稱、類名、ID、屬性等。
+  *屬性（Properties）：描述要應用的樣式特徵，如文字顏色、字體大小、背景顏色等。
+  *值（Values）：屬性所對應的具體值，例如 "red"、16px、#ffffff 等。
+  下面是一個示例，展示了如何使用 CSS 樣式規則：
+  h1 {
+  color: blue;
+  font-size: 24px;
+  }
+
+  p {
+    color: green;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  在上述示例中，h1 選擇器選中所有的 <h1> 標籤元素，並將它們的文字顏色設置為藍色，字體大小設置為 24 像素。同樣地，p 選擇器選中所有的 <p> 標籤元素，並將它們的文字顏色設置為綠色，字體大小設置為 16 像素，底部外邊距設置為 10 像素。
+  可以在一個 CSS 文件中定義多個樣式規則，並將其應用於不同的 HTML 元素。這樣可以實現對網頁元素進行細粒度的樣式控制，使網頁呈現出所需的外觀和佈局。
+  除了單獨的樣式規則，還可以使用分組選擇器（Grouping Selectors）將多個選擇器組合在一起，以同時應用相同的樣式。例如：
+  h1, h2, h3 {
+  color: blue;
+  }
+  上述示例中，h1, h2, h3 選擇器將選中所有的 <h1>、<h2> 和 <h3> 標籤元素，並將它們的文字顏色設置為藍色。
+  通過結合不同的選擇器和屬性，可以編寫出複雜的樣式規則，實現對網頁元素的高度自定義的外觀和佈局。
+  
+  (4)CSS盒模型:CSS 盒模型（Box Model）是描述網頁元素佈局和排版的模型。它將每個 HTML 元素視為一個矩形的方塊（盒子），並將其分為多個部分，包括內容區域（Content Area）、內邊距（Padding）、邊框（Border）和外邊距（Margin）。這些部分組合在一起形成元素的整體佈局。
+  下圖展示了盒模型的結構：
+  +--------------------------------------+
+  |                 Margin               |
+  +--------------------------------------+
+  |             Border                   |
+  |    +-------------------------------+ |
+  |    |          Padding              | |
+  |    |   +-----------------------+   | |
+  |    |   |       Content         |   | |
+  |    |   |                       |   | |
+  |    |   +-----------------------+   | |
+  |    +-------------------------------+ |
+  +--------------------------------------+
+  各部分的解釋如下：
+  *內容區域（Content Area）：位於邊框內部的區域，包含元素的實際內容，如文字、圖片等。
+  *內邊距（Padding）：內邊距是內容區域與邊框之間的空間。它用於控制元素內容與邊框之間的距離。
+  *邊框（Border）：邊框是位於內邊距之外的區域，用於圍繞元素的內容和內邊距。可以設置邊框的顏色、寬度和樣式。
+  *外邊距（Margin）：外邊距是邊框之外的區域，用於控制元素與其他元素之間的距離。
+  在 CSS 中，可以通過屬性來調整盒模型的不同部分：
+  *內邊距屬性：padding
+  *邊框屬性：border
+  *外邊距屬性：margin
+  例如，以下 CSS 代碼示例演示了如何設置元素的內邊距、邊框和外邊距：
+  .box {
+  padding: 20px;
+  border: 1px solid black;
+  margin: 10px;
+  }
+  在上述示例中，.box 是一個 CSS 類選擇器，它選中所有具有 box 類名的元素。對這些元素應用了 padding 屬性設置為 20 像素，border 屬性設置為 1 像素的黑色實線邊框，以及 margin 屬性設置為 10 像素的外邊距。
+  使用盒模型，可以控制元素的大小、內容區域和與其他元素的間距，以實現所需的佈局效果。
+  
+  (5)CSS文字格式:在 CSS 中，可以使用多種屬性和值來控制文字的格式和外觀。以下是一些常用的 CSS 文字格式相關屬性：
+  1.color：設置文字的顏色。
+  p {
+  color: blue;
+  }
+  2.font-family：設置文字的字體。
+  p {
+  font-family: Arial, sans-serif;
+  }
+  3.font-size：設置文字的字體大小。
+  p {
+  font-size: 16px;
+  }
+  4.font-weight：設置文字的字體粗細。
+  p {
+  font-weight: bold;
+  }
+  5.text-align：設置文字的對齊方式。
+  p {
+  text-align: center;
+  }
+  6.text-decoration：設置文字的裝飾效果，如下劃線。
+  a {
+  text-decoration: underline;
+  }
+  7.text-transform：設置文字的大小寫轉換效果，如轉為大寫或小寫。
+  h1 {
+  text-transform: uppercase;
+  }
+  8.line-height：設置文字行高，即行與行之間的垂直間距。
+  p {
+  line-height: 1.5;
+  }
+  9.letter-spacing：設置文字字母之間的間距。
+  p {
+  letter-spacing: 2px;
+  }
+  以上僅是一些常見的 CSS 文字格式相關屬性，還有其他屬性可以用於進一步控制文字的外觀和佈局。通過組合和應用這些屬性，可以創建出具有各種風格和效果的文字內容。
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

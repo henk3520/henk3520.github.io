@@ -58,7 +58,7 @@ HTML (超文本標記語言)
   <span>This is a span.</span>
   上述僅是一些常見的 HTML 元素示例，HTML 還有很多其他元素可以用於不同的用途。可以根據需要使用適當的元素來結構化和呈現網頁的內容。
 
-  (3)HTML 屬性:HTML 屬性是用於提供額外信息或配置元素的特性。它們位於 HTML 元素的開始標籤中，通常使用名稱-值對的形式表示。以下是一些常見的 HTML 屬性及其示例：
+  (3)HTML屬性:HTML 屬性是用於提供額外信息或配置元素的特性。它們位於 HTML 元素的開始標籤中，通常使用名稱-值對的形式表示。以下是一些常見的 HTML 屬性及其示例：
   1. class 屬性：
   <div class="container">
   <!-- 內容 -->
@@ -127,5 +127,116 @@ HTML (超文本標記語言)
   </tr>
   </table>
   這只是一些常見的 HTML 標籤示例，HTML 還有許多其他標籤可用於不同的目的。通過適當使用標籤和屬性，可以將網頁的內容和結構組織得更好，使其達到更好的可讀性和可維護性。
+  
+  (5)HTML表單:HTML 表單（Form）是用於收集和提交使用者數據的元素。它提供了一個結構化的方式來收集用戶輸入，例如文本、選擇框、按鈕等。表單可以用於向伺服器發送數據，也可以使用 JavaScript 進行客戶端驗證和處理。
+  
+  以下是一個簡單的 HTML 表單的示例：
+  <form action="/submit" method="post">
+  <label for="name">姓名：</label>
+  <input type="text" id="name" name="name" required>
 
+  <label for="email">電子郵件：</label>
+  <input type="email" id="email" name="email" required>
 
+  <label for="message">留言：</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">提交</button>
+  </form>
+  
+  上述示例中，<form> 標籤用於定義表單，action 屬性指定了數據提交的目標 URL，method 屬性指定了數據提交的 HTTP 方法（這裡使用 POST 方法）。
+
+  表單內部包含了多個表單元素，例如 <input>、<textarea> 和 <button>。每個表單元素都有一個 name 屬性，用於在提交表單時識別該元素的數據。一些表單元素還使用 id 屬性和 <label> 標籤進行關聯，以提供更好的可讀性和可用性。
+  在上述示例中，<input type="text"> 用於文本輸入，<input type="email"> 用於電子郵件輸入，<textarea> 用於多行文本輸入，<button type="submit"> 用於提交表單。另外，required 屬性可以添加到表單元素上，以指定該字段為必填字段。
+  提交表單時，表單數據將被打包並發送到 action 屬性指定的 URL，可以使用伺服器端腳本（如 PHP、Python、Node.js 等）來處理提交的數據。
+
+  (6)HTML圖像:在 HTML 中，可以使用 <img> 標籤來插入圖像（Image）。<img> 標籤是一個空元素，不需要結束標籤，並通過 src 屬性指定圖像的 URL。
+  以下是一個插入圖像的 HTML 代碼示例：
+  <img src="image.jpg" alt="圖像描述">
+  在上述示例中，src 屬性指定圖像的 URL，可以是相對於當前 HTML 文件的路徑或絕對的 URL。alt 屬性用於提供圖像的替代文本，當圖像無法顯示時，替代文本將顯示給用戶。
+  另外，還可以使用其他屬性來進一步配置圖像，例如：
+  width：指定圖像的寬度，可以使用像素（px）或百分比（%）。
+  height：指定圖像的高度，同樣可以使用像素或百分比。
+  title：提供一個工具提示，當用戶將鼠標懸停在圖像上時顯示。
+  class 和 id：用於樣式設定或 JavaScript 操作。
+  
+  以下是一個帶有進一步配置的圖像示例：
+  <img src="image.jpg" alt="圖像描述" width="300" height="200" title="點擊放大" class="image">
+  上述示例中，圖像的寬度被設置為 300 像素，高度為 200 像素。同時，添加了一個工具提示 點擊放大，並為圖像指定了 class 屬性為 image，以便進行相應的樣式設定或 JavaScript 操作。
+  請注意，為了使圖像在網頁上正確顯示，確保圖像文件的路徑正確且圖像格式受支持（如 JPEG、PNG 等）。
+  
+  (7)HTML超連結:在 HTML 中，超連結（Hyperlink）用於在網頁間建立連接。使用 <a> 標籤來創建超連結，其中 href 屬性指定連接的目標 URL。
+  以下是一個創建超連結的 HTML 代碼示例：
+  <a href="https://www.example.com">訪問示例網站</a>
+  在上述示例中，href 屬性指定了連接的目標 URL，這裡是 "https://www.example.com"。連結的內容是放在 <a> 和 </a> 標籤之間，這裡是 "訪問示例網站"。
+  除了絕對 URL，還可以使用相對 URL 來指定連接的目標。例如，相對於當前網頁的文件路徑或其他網頁的文件路徑。
+  <a href="about.html">關於我們</a>
+  <a href="subfolder/page.html">子文件夾中的頁面</a>
+  上述示例中，href 屬性的值是相對於當前網頁的文件路徑。第一個超連結將指向 about.html，而第二個超連結將指向 subfolder/page.html。
+  還可以使用其他屬性來進一步配置超連結，例如：
+  target 屬性：指定連結在何處打開。常見的值有 _blank（在新窗口打開）、_self（在當前窗口打開）等。
+  title 屬性：提供一個工具提示，當用戶將鼠標懸停在連結上時顯示。
+  
+  以下是一個帶有進一步配置的超連結示例：
+  <a href="https://www.example.com" target="_blank" title="在新窗口中打開">訪問示例網站</a>
+  上述示例中，超連結將在新窗口中打開，並且添加了一個工具提示 在新窗口中打開。
+  通過使用超連結，可以在 HTML 中創建可點擊的文本或圖像，以便用戶可以導航到其他網頁、下載文件或執行其他操作。
+  
+  (8)HTML樣式:HTML 樣式（Style）用於控制網頁的外觀和佈局。可以使用 CSS（層疊樣式表）來為 HTML 元素添加樣式。CSS 提供了一種強大的方式來選擇元素並對其應用樣式，使網頁具有各種視覺效果。
+  有多種方式可以在 HTML 中應用樣式：
+  
+  1.內聯樣式（Inline Styles）：直接在 HTML 元素上使用 style 屬性來指定樣式。例如：
+  <p style="color: blue; font-size: 16px;">這是一個藍色的段落</p>
+  2.內部樣式表（Internal Stylesheet）：在 <head> 標籤內使用 <style> 標籤定義樣式。例如：
+  <head>
+  <style>
+    p {
+      color: blue;
+      font-size: 16px;
+    }
+  </style>
+  </head>
+  <body>
+    <p>這是一個藍色的段落</p>
+  </body>
+  3.外部樣式表（External Stylesheet）：將樣式定義在一個單獨的 CSS 文件中，然後在 HTML 文件中使用 <link> 標籤引入該 CSS 文件。例如：
+  <head>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <p>這是一個藍色的段落</p>
+  </body>
+  
+  無論使用哪種方式，可以使用 CSS 屬性和值來設定元素的樣式。一些常見的 CSS 屬性包括：
+
+  color：文字顏色
+  background-color：背景顏色
+  font-size：字體大小
+  font-family：字體族名稱
+  text-align：文本對齊方式
+  margin 和 padding：外邊距和內邊距
+  border：邊框
+  width 和 height：元素的寬度和高度
+  display：元素的顯示方式（如 block、inline、none 等）
+  
+  以下是一個使用 CSS 樣式的示例：
+  <head>
+  <style>
+    p {
+      color: blue;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  </head>
+  <body>
+    <p>這是一個藍色的段落</p>
+    <p class="highlight">這是一個具有黃色背景的段落</p>
+  </body>
+  上述示例中，第一個 <p> 元素應用了一般的樣式，而第二個 <p> 元素具有額外的 highlight 類名，該類名在 CSS 中定義了黃色的背景顏色。
+  通過使用 CSS，可以根據需要自定義元素的外觀和佈局，使網頁呈現出更具吸引力和一致性的視覺效果。
+  

@@ -191,12 +191,100 @@ CSS (層疊樣式表)
   }
   以上僅是一些常見的 CSS 文字格式相關屬性，還有其他屬性可以用於進一步控制文字的外觀和佈局。通過組合和應用這些屬性，可以創建出具有各種風格和效果的文字內容。
   
+  (6)CSS背景和邊框:在 CSS 中，你可以使用相關屬性來設定元素的背景和邊框。以下是一些常用的 CSS 背景和邊框相關屬性：
+  背景相關屬性：
+  1.background-color：設定元素的背景顏色。
+  div {
+  background-color: #f1f1f1;
+  }
+  2.background-image：設定元素的背景圖片。
+  div {
+  background-image: url("image.jpg");
+  }
+  3.background-repeat：設定背景圖片的重複方式。
+  div {
+  background-repeat: no-repeat;
+  }
+  4.background-position：設定背景圖片的位置。
+  div {
+  background-position: center;
+  }
+  邊框相關屬性：  
+  1.border-width：設定邊框的寬度。
+  div {
+  border-width: 1px;
+  }
+  2.border-style：設定邊框的樣式。
+  div {
+  border-style: solid;
+  }
+  3.border-color：設定邊框的顏色。
+  div {
+  border-color: #000000;
+  }
+  4.border-radius：設定邊框的圓角半徑。
+  div {
+    border-radius: 5px;
+  }
+  5.border：同時設定邊框的寬度、樣式和顏色。
+  div {
+  border: 1px solid #000000;
+  }
+  除了上述屬性外，還有其他更高級的背景和邊框相關屬性可供使用，例如 background-size、box-shadow 等，它們可以用於實現更複雜和多樣化的效果。透過組合和調整這些屬性的值，你可以創建出各種不同的背景和邊框樣式，以達到所需的視覺效果。
   
+  (7)CSS浮動和定位:CSS 中的浮動（float）和定位（positioning）是用於控制元素在網頁中的位置和佈局的重要技術。以下是有關浮動和定位的簡要介紹：
+  浮動（Float）：
+  float 屬性用於將元素從正常的文檔流中移動，使其浮動到其他元素的左側或右側。
+  浮動元素會脫離正常的文檔流，並且其他元素將環繞在其周圍。
+  常用值有 left（向左浮動）、right（向右浮動）和 none（取消浮動）。
+  使用浮動可以實現多欄佈局、圖片佈局等。
+  img {
+  float: left;
+  }
+  定位（Positioning）：
+  position 屬性用於設置元素的定位方式。
+  常用值有 static（默認，按照正常文檔流佈局）、relative（相對定位）、absolute（絕對定位）和 fixed（固定定位）。
+  使用定位可以精確控制元素在網頁中的位置，不受文檔流的限制。
+  透過 top、bottom、left 和 right 屬性可以進一步指定元素相對於其定位父級的偏移位置。
+  div {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  }
+  除了上述基本屬性，CSS 還提供了其他定位相關的屬性，如 z-index（指定元素的堆疊順序）和 overflow（控制元素內容超出時的處理方式）等。
+  浮動和定位是強大的 CSS 技術，可以實現複雜的網頁佈局和視覺效果。然而，它們也可能導致佈局問題和兼容性問題，因此在使用時需要謹慎考慮並測試其影響。
   
+  (8)CSS動畫和過渡:CSS 動畫（Animation）和過渡（Transition）是用於在網頁中創建動態效果的 CSS 技術。它們可以通過定義不同的狀態和屬性變化，使元素在時間軸上產生平滑的變化效果。以下是有關 CSS 動畫和過渡的簡要介紹：
+  過渡（Transition）：
+  transition 屬性用於在元素狀態改變時實現平滑的過渡效果。
+  過渡可以應用於元素的多個屬性，例如背景色、寬度、高度等。
+  通過指定過渡的持續時間、時間函數（timing function）和延遲時間，可以自定義過渡的速度和時間。
+  過渡效果通常在元素的狀態發生變化時觸發，例如懸停、聚焦、點擊等。
+  div {
+  transition: background-color 0.5s ease-in-out;
+  }
   
-  
-  
-  
-  
-  
-  
+  div:hover {
+    background-color: red;
+  }
+  動畫（Animation）：
+  @keyframes 規則用於定義動畫的關鍵幀（keyframes），即指定元素在不同時間點上的狀態。
+  通過指定關鍵幀的屬性變化和時間，可以創建出多段動畫序列。
+  使用 animation 屬性將動畫應用到元素上，並指定動畫的名稱、持續時間、時間函數、延遲時間等屬性。
+  動畫可以設置循環播放、反向播放、暫停等功能。
+  @keyframes myAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+  }
+
+  div {
+    animation: myAnimation 3s infinite;
+  }
+  以上是簡單的示例，你可以根據需要定義更複雜和多樣化的過渡和動畫效果。CSS 動畫和過渡能夠提升網頁的交互性和視覺效果，使元素在使用者與網頁互動時更加生動和吸引人。

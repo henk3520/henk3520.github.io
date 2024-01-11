@@ -1,0 +1,60 @@
+3.1 CUDA 的基本概念
+CUDA（Compute Unified Device Architecture）是 NVIDIA 開發的一個平行計算平台和程式語言，用於利用 GPU 進行通用計算。以下是 CUDA 的基本概念：
+3.1.1 GPU 和 CUDA Core
+GPU (繪圖處理單元): 是一種專門設計用於處理圖形和影像運算的硬體裝置。在 CUDA 中，GPU 被視為通用計算裝置，具有多個計算核心（CUDA Cores）。
+CUDA Core: GPU 中的計算核心，可以執行 CUDA 程式中的指令。每個 CUDA Core 具有獨立的浮點運算能力，而 GPU 中的多個 CUDA Cores 可以同時執行大量平行任務。
+3.1.2 CUDA 資料模型
+Host 和 Device： 在 CUDA 中，計算工作被分為主機（Host）和設備（Device）兩個部分。主機是指主要的 CPU，而設備則是指 GPU。主機負責協調整體計算，而設備負責執行 CUDA 核心。
+Kernel： 在 CUDA 中，Kernel 是由主機代碼調用，並在 GPU 上執行的一段 CUDA 代碼。Kernel 是 CUDA 程式中的主要並行執行單元，每個 Kernel 都可以由多個執行緒同時執行。
+3.1.3 CUDA 程式結構
+Grid 和 Block： CUDA 中的計算結構分為 Grid 和 Block。Grid 包含多個 Block，而每個 Block 包含多個執行緒（Thread）。Grid 和 Block 的設計可以充分發揮 GPU 的平行計算能力。
+Thread： 在 CUDA 中，Thread 是最小的執行單位。每個 Thread 被映射到 GPU 中的一個 CUDA Core，並執行相同的指令，以實現平行處理。
+3.1.4 GPU 記憶體體系
+Global Memory： 是 GPU 上所有 Kernel 可以訪問的全域記憶體。Global Memory 的資料在主機和設備之間進行傳輸。
+Shared Memory： 是 GPU 中的共享記憶體，被同一 Block 中的所有 Thread 共享。它用於提高同一 Block 中 Thread 之間的資料交換速度。
+Constant Memory 和 Texture Memory： 是 GPU 上的特殊記憶體區域，用於儲存常數和紋理數據。
+3.1.5 CUDA 程式語言
+CUDA C/C++： CUDA 使用 C 語言作為基本的程式語言，並擴展了一系列的 CUDA 特有擴展，允許開發者直接在 C 語言中插入 GPU 計算的指令。
+以上是 CUDA 的一些基本概念，理解這些概念有助於開發者有效地使用 GPU 進行通用計算，實現高效率的並行處理。
+
+3.2 Kernel 與 Thread 的概念
+在 CUDA 中，Kernel 和 Thread 是兩個基本概念，它們是用於實現並行計算的重要元素。
+3.2.1 Kernel
+Kernel： 在 CUDA 中，Kernel 是一段在 GPU 上執行的代碼。它是由主機（CPU）上的程式代碼調用，然後在 GPU 上運行的並行計算單位。Kernel 中的每個執行緒都執行相同的指令，但每個執行緒處理的數據可能不同。
+啟動 Kernel： 啟動 Kernel 意味著將計算的控制權從主機轉移到 GPU。在啟動 Kernel 時，需要指定 Grid 和 Block 的維度。Grid 是包含多個 Block，而每個 Block 包含多個執行緒。
+例子：
+"
+__global__ void myKernel(int *array) {
+    int tid = blockIdx.x * blockDim.x + threadIdx.x;
+    array[tid] = array[tid] * 2;
+}
+"
+在這個例子中，myKernel 是一個 CUDA Kernel，將 array 中的每個元素乘以 2。
+3.2.2 Thread
+Thread： 在 CUDA 中，Thread 是 GPU 上執行的最小的並行計算單位。每個 Thread 對應到一個 CUDA Core 上，並執行相同的指令。Kernel 的每一次啟動都會產生大量的 Thread，它們可以並行執行，以提高整體計算效率。
+Thread ID： 每個 Thread 都有一個唯一的 ID，可以使用這個 ID 來識別和存取特定的 Thread。Thread 的 ID 可以由 blockIdx（Block 的 ID）、blockDim（Block 的維度）和 threadIdx（Thread 在 Block 中的 ID）計算而來。
+例子：
+"
+int tid = blockIdx.x * blockDim.x + threadIdx.x;
+"
+在這個例子中，tid 計算了當前 Thread 的全局唯一 ID，用於在 Kernel 中區別不同的 Thread。
+理解 Kernel 和 Thread 的概念是 CUDA 程式設計的基礎，它們讓開發者能夠充分發揮 GPU 的平行計算能力，實現高效的並行處理。
+
+3.3 GPU 記憶體層次結構
+GPU 記憶體層次結構是指 GPU 中不同層次的記憶體，它們具有不同的特性和用途。理解 GPU 記憶體層次結構對於優化並行計算非常重要，以確保數據能夠有效地在 GPU 上移動和存儲。
+3.3.1 全域記憶體（Global Memory）
+特點： 全域記憶體是 GPU 上所有 Kernel 可以訪問的主要記憶體，具有較大的容量，但存取速度相對較慢。
+用途： 用於保存整個計算任務所需的數據，主機和設備之間的數據傳輸也通過全域記憶體完成。
+3.3.2 共享記憶體（Shared Memory）
+特點： 共享記憶體是位於同一 Block 內的 Thread 可以共享的高速低延遲記憶體，用於加速同一 Block 內的 Thread 之間的數據交換。
+用途： 在同一 Block 的 Thread 之間共享局部數據，用於提高同步和通信效率。
+3.3.3 靜態記憶體（Constant Memory 和 Texture Memory）
+特點： 靜態記憶體是特殊的只讀記憶體，用於保存不變的數據，例如常數數組和紋理數據。
+用途： 在 CUDA 中，它用於儲存在編譯時確定的只讀數據，以提高存取速度。
+3.3.4 寄存器（Registers）
+特點： 每個 Thread 都有自己的寄存器，用於保存局部變數和中間計算結果。
+用途： 寄存器用於存儲 Thread 執行時需要使用的臨時數據，存取速度非常快。
+3.3.5 局部記憶體（Local Memory）
+特點： 局部記憶體用於存儲不進入寄存器的局部變數，存取速度較慢。
+用途： 當寄存器不足以容納局部變數時，這些變數將被存儲在局部記憶體中。
+理解 GPU 記憶體層次結構是進行 CUDA 程式優化的關鍵。合理地利用不同層次的記憶體，減少數據存取的時間，是提高 GPU 程式性能的重要一環。

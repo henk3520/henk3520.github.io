@@ -1,4 +1,4 @@
-GPU / CUDA 繪圖處理器相關技術
+GPU / CUDA 
 目錄
   簡介
 1
@@ -14,52 +14,3 @@ GPU / CUDA 繪圖處理器相關技術
   3.1 CUDA的基本概念
   3.2 Kernel與Thread的概念
   3.3 GPU Memory Hierarchy
-4  
-  CUDA編程模型
-  4.1 Kernel的撰寫與執行
-  4.2 內存管理與共享記憶體
-  4.3 CUDA程式優化技巧
-5  
-  CUDA Thread Cooperation
-  5.1 Thread同步
-  5.2 Thread間通訊
-  5.3 Warp的概念
-6  
-  CUDA庫與工具
-  6.1 cuBLAS (CUDA Basic Linear Algebra Subroutines)
-  6.2 cuDNN (CUDA Deep Neural Network library)
-  6.3 Nsight工具套件
-7  
-  GPU架構與硬體特性
-  7.1 GPU核心結構
-  7.2 CUDA核心數量與配置
-  7.3 GPU硬體特化 (Tensor Cores等)
-8  
-  GPU虛擬化
-  8.1 GPU Passthrough技術
-  8.2 虛擬GPU與雲端運算
-9  
-  CUDA與其他GPU API比較
-  9.1 OpenCL (Open Computing Language)
-  9.2 Vulkan API
-  9.3 DirectX 12
-10  
-  深度學習與GPU
-  10.1 GPU在深度學習中的應用
-  10.2 Tensorflow與PyTorch的GPU支援
-11  
-  GPU能源效能管理
-  11.1 GPU功耗控制
-  11.2 運算能力與功耗的平衡
-12  
-  新興技術與未來趨勢
-  12.1 光追跟光線追踪的GPU支援
-  12.2 GPU在量子計算中的角色
-13  
-  應用範疇
-  13.1 遊戲開發中的GPU應用
-  13.2 科學計算中的GPU應用
-14  
-  安全性與GPU
-  14.1 GPU內存保護
-  14.2 GPU虛擬化中的安全性
